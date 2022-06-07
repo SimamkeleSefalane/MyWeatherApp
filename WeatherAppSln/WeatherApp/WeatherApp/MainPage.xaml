@@ -4,8 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
               mc:Ignorable="d"
-             x:Class="WeatherApp.MainPage" BackgroundColor="Bisque">
-
+             x:Class="WeatherApp.MainPage">
     <Grid VerticalOptions="FillAndExpand">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -13,7 +12,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Image Source="splash_logo.png" Aspect="Fill" HeightRequest="300" VerticalOptions="StartAndExpand"/>
+        <Image Source="thunder.png" Aspect="AspectFill" Grid.RowSpan="4" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="20,50">
             <ImageButton Source="menu.png" WidthRequest="23" HeightRequest="15" HorizontalOptions="Start" VerticalOptions="Center" />
             <Label Text="Cape Town, SA" FontSize="16" VerticalOptions="Center" TextColor="White"/>
@@ -31,7 +30,7 @@
             <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>  
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
