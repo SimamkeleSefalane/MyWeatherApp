@@ -48,12 +48,16 @@ namespace WeatherApp
 
             client.DefaultRequestHeaders.Add("Accept", "application /json");
 
-            var response = await client.GetStringAsync("https://api.openweathermap.org/data/2.5/weather?lat=-33&lon=18&units=metric&appid=0a174e1be268d8c199778d5f16059615");
+            string url = $"https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&units=metric&appid=0a174e1be268d8c199778d5f16059615";
+
+
+            var response = await client.GetStringAsync(url);
 
 
             var weatherDetails = JsonConvert.DeserializeObject<OpenWeatherDetails>(response);
 
             return weatherDetails;
+           
 
         }
     } 
