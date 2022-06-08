@@ -17,6 +17,12 @@ namespace WeatherApp
         public MainPage()
         {
             InitializeComponent();
+            
+        }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            BindingContext = await GetWeatherDetails();
         }
 
 
@@ -42,7 +48,7 @@ namespace WeatherApp
 
             client.DefaultRequestHeaders.Add("Accept", "application /json");
 
-            var response = await client.GetStringAsync("https://api.openweathermap.org/data/2.5/weather?lat=lat&lon=lon&appid=0a174e1be268d8c199778d5f16059615");
+            var response = await client.GetStringAsync("https://api.openweathermap.org/data/2.5/weather?lat=-33&lon=18&units=metric&appid=0a174e1be268d8c199778d5f16059615");
 
 
             var weatherDetails = JsonConvert.DeserializeObject<OpenWeatherDetails>(response);
